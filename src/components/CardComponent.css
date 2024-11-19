@@ -1,0 +1,190 @@
+/* Center the card on the page */
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  /* Card Styling */
+  .card {
+    width: 350px; /* Increase width of the card for better visibility */
+    background-color: #fff;
+    border-radius: 15px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    text-align: center;
+    border: 3px solid transparent; /* Set default border */
+    background-clip: padding-box;
+    position: relative;
+  }
+  
+  /* Border with gradient and design effect */
+  .card::before {
+    content: '';
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    right: -3px;
+    bottom: -3px;
+    border-radius: 15px;
+    background:rgb(240, 180, 227);
+    z-index: -1; /* Place the border behind the card */
+  }
+  
+  /* Card hover effect */
+  .card:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    border-color: #a34a16; /* Change border color when hovering */
+  }
+  
+  /* Image Styling */
+  .card-image {
+    width: 100%;
+    height: 250px; /* Increase height for better visibility */
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+  }
+  
+  .card-image:hover {
+    transform: scale(1.05);
+    filter: brightness(85%);
+  }
+  
+  /* Content Styling */
+  .card-content {
+    padding: 15px 0;
+    position: relative;
+  }
+  
+  /* Title Styling */
+  /* Company Name Animation */
+.card-title {
+    font-size: 1.7rem;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: moveLeftToRight 5s infinite linear; /* Apply animation */
+    background: linear-gradient(90deg, #ff6ec7, #007bff, #ff9900);
+    -webkit-background-clip: text;
+    color: transparent; /* Gradient effect for the text */
+  }
+  
+  /* Keyframes for moving from left to right */
+  @keyframes moveLeftToRight {
+    0% {
+      transform: translateX(-100%); /* Start outside the viewport */
+    }
+    50% {
+      transform: translateX(0); /* Enter the viewport */
+    }
+    100% {
+      transform: translateX(100%); /* Exit to the right */
+    }
+  }
+  
+  .card-title:hover {
+    color: #007bff;
+    text-shadow: 2px 2px 4px rgba(0, 123, 255, 0.3);
+  }
+  
+  /* Description Styling */
+  .card-description {
+    font-size: 1rem;
+    color: #1511f8;
+    margin: 10px 0;
+    line-height: 1.5;
+    opacity: 0.9;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .card-description:hover {
+    opacity: 1;
+    color: #333;
+  }
+  
+  /* Mobile Names Styling */
+  .mobile-names {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .mobile-name {
+    font-size: 1.2rem;
+    padding: 5px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: capitalize;
+    border-radius: 5px;
+    margin: 0 10px;
+  }
+  
+  .mobile-name:hover {
+    background-color: #e2f0ff;
+    color: #0056b3;
+    transform: scale(1.1);
+  }
+  
+  .mobile-name.active {
+    background-color: #007bff;
+    color: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Button Styling */
+  .card-button {
+    background-color:coral;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card-button:hover {
+    background-color:rgb(231, 199, 19);
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card-button:active {
+    transform: scale(0.98);
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    .card {
+      width: 80%;
+      margin: 20px auto;
+    }
+  
+    .card-image {
+      height: 200px;
+    }
+  
+    .card-title {
+      font-size: 1.3rem;
+    }
+  
+    .card-description {
+      font-size: 0.9rem;
+    }
+  
+    .card-button {
+      padding: 8px 15px;
+      font-size: 0.9rem;
+    }
+  }
+  
